@@ -9,11 +9,13 @@ const festivalRoutes = require('./routes/festivalRoutes');
 const adminRoutes = require('./routes/adminRoutes');
 const chatRoutes = require('./routes/chatRoutes');
 const errorMiddleware = require('./middleware/errorMiddleware');
+const recommendRoutes = require('./routes/recommendRoutes');
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
+app.use('/api/recommend', recommendRoutes);
 
 // Health check
 app.get('/', (req, res) => {
